@@ -1,0 +1,1563 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     57568,       1555]
+NotebookOptionsPosition[     55560,       1515]
+NotebookOutlinePosition[     55995,       1532]
+CellTagsIndexPosition[     55952,       1529]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Actividad 4", "Title",
+ CellChangeTimes->{{3.924839236255188*^9, 
+  3.924839238211254*^9}},ExpressionUUID->"ec46baf9-ae66-2b46-b364-\
+d83c9a866355"],
+
+Cell["Wei Le Hu Tang", "Subtitle",
+ CellChangeTimes->{{3.924839242786644*^9, 
+  3.9248392448338585`*^9}},ExpressionUUID->"476eddea-c13b-d843-b949-\
+8fb5d4a14c68"],
+
+Cell["\<\
+Considera una poblaci\[OAcute]n cuya din\[AAcute]mica de movimiento est\
+\[AAcute] descrita por la siguiente ecuaci\[OAcute]n:\
+\>", "Subtitle",
+ CellChangeTimes->{{3.924839277150648*^9, 3.924839284858724*^9}, {
+  3.9248394397232*^9, 3.924839443497631*^9}, {3.924839758253763*^9, 
+  3.9248397589095716`*^9}},ExpressionUUID->"51a69770-18b5-a94f-9656-\
+4396d8ba2ed7"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], "\[LongEqual]", 
+         StyleBox["D", "TI"], 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[PartialD]", "2"], 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            SuperscriptBox[
+             StyleBox["x", "TI"], "2"]}]], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\frac{\\partial P}{\\partial t}=D\\frac{\\partial^2 P}{\\partial x^2}+\
+\\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "84d4956e-8cb6-9744-b769-98567a8ece26"],
+ "\t",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", "1", ")"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "(1)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ff0c6fcc-7c7f-ee4a-84af-026e03b8fb2d"]
+}], "Subtitle",
+ CellChangeTimes->{
+  3.9248394765102425`*^9, {3.924839725507454*^9, 3.924839735758663*^9}},
+ TextAlignment->Center,ExpressionUUID->"e09fbc0e-8331-a74c-8ba6-dd36d9949e5b"],
+
+Cell[TextData[{
+ "Si la poblaci\[OAcute]n se encuentra completamente concentrada en ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["x", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "x = 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cdb53e9f-7ff3-3f42-ac8c-00a48cf3439f"],
+ " en ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["t", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "t = 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ab3122f1-06cd-2447-b2e6-c04306dc4cd1"],
+ ", la soluci\[OAcute]n a la ecuaci\[OAcute]n anterior es:"
+}], "Subtitle",
+ CellChangeTimes->{{3.9248397834546375`*^9, 
+  3.924839845795967*^9}},ExpressionUUID->"26ab54e9-d56c-d649-b8ea-\
+200313ac64cc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["P", "TI"], 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["x", "TI"], ",", 
+             StyleBox["t", "TI"]}], ")"}], "\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "P(x,t)=\\frac{P_0}{2\\sqrt{\\pi Dt}}\\exp(\\alpha t-\\frac{x^2}{4Dt})", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a7bbab32-1224-2044-b00b-e574d6e8e94f"],
+ "\t",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", "2", ")"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "(2)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "66d10dfb-e2b9-254d-ad22-b9e2ffe8b582"]
+}], "Subtitle",
+ CellChangeTimes->{
+  3.9248400016178703`*^9, {3.9248401164578934`*^9, 3.924840117714693*^9}},
+ TextAlignment->Center,ExpressionUUID->"6828e080-b054-7341-8e8e-a87927a02cef"],
+
+Cell[CellGroupData[{
+
+Cell["1. Explica qu\[EAcute] cosas se est\[AAcute]n asumiendo en la ecuaci\
+\[OAcute]n (1).", "Section",
+ CellChangeTimes->{{3.924840102203448*^9, 3.924840112338903*^9}, {
+  3.924840419133938*^9, 
+  3.92484042558794*^9}},ExpressionUUID->"3682506e-0c98-fd4b-9308-\
+a3fb10b2e105"],
+
+Cell[TextData[{
+ "Se asumen ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["D", "TI"], ",", "\[Alpha]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "D,\\alpha", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f644a284-76c9-4248-975c-b561fca41d74"],
+ " constantes\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["D", "TI"], 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[PartialD]", "2"], 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            SuperscriptBox[
+             StyleBox["x", "TI"], "2"]}]]}], TraditionalForm], "errors" -> {},
+      "input" -> "D\\frac{\\partial^2 P}{\\partial x^2}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f279fddf-1dd4-d046-b170-e4214bec4789"],
+ " es el t\[EAcute]rmino de dispersi\[OAcute]n de la poblaci\[OAcute]n en el \
+medio, donde ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["D", "TI"], TraditionalForm], "errors" -> {}, "input" -> "D", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "306ae5d6-aa48-6647-b6b3-e8c069403ee4"],
+ " es la tasa de dispersi\[OAcute]n.\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9894a050-dfc5-9e4c-b2eb-d7204ef57a31"],
+ " es el crecimiento ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Alpha]", ">", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\alpha>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "93b4933c-e7cd-cd4d-a1ba-4aa7ce20d499"],
+ " o decrecimiento ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Alpha]", "<", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\alpha<0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e35aa3b0-08e5-6549-897d-f6b1306ca20b"],
+ " de la poblaci\[OAcute]n independiente del medio, entonces ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|
+    "boxes" -> FormBox["\[Alpha]", TraditionalForm], "errors" -> {}, "input" -> 
+     "\\alpha", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4bc99851-ba1b-9b40-9d8e-826a12f837df"],
+ " es un \[IAcute]ndice de reproducci\[OAcute]n.\nM\[AAcute]s aun, se asume \
+que es un medio constante, pues la dispersi\[OAcute]n de la poblaci\[OAcute]n \
+no se ve afectada por el espacio ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["x", "TI"], TraditionalForm], "errors" -> {}, "input" -> "x", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2f7facd0-4df2-f643-8b88-052b080376d1"],
+ ", sino s\[OAcute]lo por una constante ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["D", "TI"], TraditionalForm], "errors" -> {}, "input" -> "D", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c528787f-3093-764c-8cb4-344e3d925b3c"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.9248735331640167`*^9, 3.9248735463440247`*^9}, {
+  3.924873762354595*^9, 3.9248737723062*^9}, {3.924873806924906*^9, 
+  3.9248741029476795`*^9}, {3.924874155684494*^9, 
+  3.9248742038597965`*^9}},ExpressionUUID->"4f7df78d-d102-a848-bbe3-\
+8da12f3ef225"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "2. Verifica que ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", "2", ")"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "(2)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f27b117c-6aeb-1746-9429-733e8f8ed625"],
+ " es una soluci\[OAcute]n diferenciando y mostrando que se satisface la \
+ecuaci\[OAcute]n ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", "1", ")"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "(1)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "61245383-ac91-1d4d-80e1-7dcd592e1503"],
+ "."
+}], "Section",
+ CellChangeTimes->{{3.9248404107052727`*^9, 
+  3.924840454149212*^9}},ExpressionUUID->"d930b9e0-18e0-8942-b384-\
+8821e085dd4b"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], "\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], 
+         FractionBox["\[PartialD]", 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], "+", "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], 
+         FractionBox["\[PartialD]", 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\frac{\\partial P}{\\partial t}=\\frac{P_0}{2\\sqrt{\\pi \
+Dt}}\\frac{\\partial }{\\partial t} \\exp(\\alpha \
+t-\\frac{x^2}{4Dt})+\\exp(\\alpha t-\\frac{x^2}{4Dt}) \\frac{\\partial \
+}{\\partial t}\\frac{P_0}{2\\sqrt{\\pi Dt}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2b3959d5-e1a5-6540-87ab-7c3acc7e683e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", "+", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                SuperscriptBox[
+                 StyleBox["t", "TI"], "2"]}]]}], ")"}], "-", "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"4", 
+            StyleBox["t", "TI"], 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "=\\frac{P_0}{2\\sqrt{\\pi Dt}}\\exp(\\alpha t-\\frac{x^2}{4Dt})(\\alpha \
++\\frac{x^2}{4Dt^2}) - \\exp(\\alpha t-\\frac{x^2}{4Dt})\\frac{P_0}{4t\\sqrt{\
+\\pi Dt}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "060bd02e-1bb2-d245-a0cf-38896be7d533"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", "+", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                SuperscriptBox[
+                 StyleBox["t", "TI"], "2"]}]]}], ")"}], 
+         StyleBox["P", "TI"], "-", 
+         FractionBox["1", 
+          RowBox[{"2", 
+            StyleBox["t", "TI"]}]], 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "=(\\alpha +\\frac{x^2}{4Dt^2}) P- \\frac{1}{2t}P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "692fcf48-5be4-4b44-9ce1-f509f12c48f2"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          RowBox[{"4", 
+            StyleBox["D", "TI"], 
+            SuperscriptBox[
+             StyleBox["t", "TI"], "2"]}]], 
+         StyleBox["P", "TI"], "-", 
+         FractionBox["1", 
+          RowBox[{"2", 
+            StyleBox["t", "TI"]}]], 
+         StyleBox["P", "TI"], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "=\\frac{x^2}{4Dt^2} P- \\frac{1}{2t}P+ \\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "78370182-a36a-ea44-9893-61ad754d7c6a"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            StyleBox["x", "TI"]}]], "\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], 
+         RowBox[{"(", 
+           FractionBox[
+            RowBox[{"-2", 
+              StyleBox["x", "TI"]}], 
+            RowBox[{"4", 
+              StyleBox["D", "TI"], 
+              StyleBox["t", "TI"]}]], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\frac{\\partial P}{\\partial x}=\\frac{P_0}{2\\sqrt{\\pi \
+Dt}}\\exp(\\alpha t-\\frac{x^2}{4Dt})(\\frac{-2x}{4Dt})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c28d0654-1d83-d343-a571-c29c20d146ec"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[PartialD]", "2"], 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            SuperscriptBox[
+             StyleBox["x", "TI"], "2"]}]], "\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], 
+         RowBox[{"(", 
+           RowBox[{"exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}], 
+             FractionBox["\[PartialD]", 
+              RowBox[{"\[PartialD]", 
+                StyleBox["x", "TI"]}]], 
+             FractionBox[
+              RowBox[{"-2", 
+                StyleBox["x", "TI"]}], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], "+", 
+             FractionBox[
+              RowBox[{"-2", 
+                StyleBox["x", "TI"]}], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], 
+             FractionBox["\[PartialD]", 
+              RowBox[{"\[PartialD]", 
+                StyleBox["x", "TI"]}]], "exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}]}], ")"}]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\frac{\\partial^2 P}{\\partial \
+x^2}=\\frac{P_0}{2\\sqrt{\\pi Dt}}(\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})\\frac{\\partial }{\\partial \
+x}\\frac{-2x}{4Dt}+\\frac{-2x}{4Dt}\\frac{\\partial }{\\partial \
+x}\\exp(\\alpha t-\\frac{x^2}{4Dt}))", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "522dc214-670c-cc42-9998-4f5a7c7fc564"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], 
+         RowBox[{"(", 
+           RowBox[{"exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}], 
+             FractionBox["-2", 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], "+", 
+             FractionBox[
+              RowBox[{"-2", 
+                StyleBox["x", "TI"]}], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], "exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}], 
+             RowBox[{"(", 
+               FractionBox[
+                RowBox[{"-2", 
+                  StyleBox["x", "TI"]}], 
+                RowBox[{"4", 
+                  StyleBox["D", "TI"], 
+                  StyleBox["t", "TI"]}]], ")"}]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "=\\frac{P_0}{2\\sqrt{\\pi Dt}}(\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})\\frac{-2}{4Dt}+\\frac{-2x}{4Dt}\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})(\\frac{-2x}{4Dt}))", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "95c7607b-c5cb-a74f-94c2-94d91f9ec4cf"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], 
+         RowBox[{"(", 
+           RowBox[{"-", 
+             FractionBox["1", 
+              RowBox[{"2", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], "exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}], "+", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                SuperscriptBox[
+                 StyleBox["D", "TI"], "2"], 
+                SuperscriptBox[
+                 StyleBox["t", "TI"], "2"]}]], "exp", 
+             RowBox[{"(", 
+               RowBox[{"\[Alpha]", 
+                 StyleBox["t", "TI"], "-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   StyleBox["x", "TI"], "2"], 
+                  RowBox[{"4", 
+                    StyleBox["D", "TI"], 
+                    StyleBox["t", "TI"]}]]}], ")"}]}], ")"}]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "=\\frac{P_0}{2\\sqrt{\\pi Dt}}(-\\frac{1}{2Dt}\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})+\\frac{x^2}{4D^2t^2}\\exp(\\alpha t-\\frac{x^2}{4Dt}))", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e866fd78-0201-e347-8906-20d0aac033d5"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          RowBox[{"4", 
+            SuperscriptBox[
+             StyleBox["D", "TI"], "2"], 
+            SuperscriptBox[
+             StyleBox["t", "TI"], "2"]}]], 
+         StyleBox["P", "TI"], "-", 
+         FractionBox["1", 
+          RowBox[{"2", 
+            StyleBox["D", "TI"], 
+            StyleBox["t", "TI"]}]], 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "=\\frac{x^2}{4D^2t^2}P-\\frac{1}{2Dt}P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "27801e54-8f59-a645-b2c8-cc6a01cfb5a4"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          RowBox[{"\[PartialD]", 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], "\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          RowBox[{"4", 
+            StyleBox["D", "TI"], 
+            SuperscriptBox[
+             StyleBox["t", "TI"], "2"]}]], 
+         StyleBox["P", "TI"], "-", 
+         FractionBox["1", 
+          RowBox[{"2", 
+            StyleBox["t", "TI"]}]], 
+         StyleBox["P", "TI"], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow\\frac{\\partial P}{\\partial t}=\\frac{x^2}{4Dt^2} P- \
+\\frac{1}{2t}P+ \\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "1035e6b8-650f-544c-8c2c-06cb185e539f"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         StyleBox["D", "TI"], 
+         RowBox[{"(", 
+           RowBox[{
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                SuperscriptBox[
+                 StyleBox["D", "TI"], "2"], 
+                SuperscriptBox[
+                 StyleBox["t", "TI"], "2"]}]], 
+             StyleBox["P", "TI"], "-", 
+             FractionBox["1", 
+              RowBox[{"2", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]], 
+             StyleBox["P", "TI"]}], ")"}], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "=D(\\frac{x^2}{4D^2t^2} P- \\frac{1}{2Dt}P)+ \\alpha P", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9535d8db-834d-7947-990a-dbed1da1434c"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", 
+         StyleBox["D", "TI"], 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[PartialD]", "2"], 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            SuperscriptBox[
+             StyleBox["x", "TI"], "2"]}]], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "=D\\frac{\\partial^2 P}{\\partial x^2}+\\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "5fe74125-6eee-6d4b-989a-6b001273a8ae"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", 
+         FractionBox[
+          RowBox[{"\[PartialD]", 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            StyleBox["t", "TI"]}]], "\[LongEqual]", 
+         StyleBox["D", "TI"], 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[PartialD]", "2"], 
+            StyleBox["P", "TI"]}], 
+          RowBox[{"\[PartialD]", 
+            SuperscriptBox[
+             StyleBox["x", "TI"], "2"]}]], "+", "\[Alpha]", 
+         StyleBox["P", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\therefore \\frac{\\partial P}{\\partial t}=D\\frac{\\partial^2 \
+P}{\\partial x^2}+\\alpha P", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d21791ba-ba4e-d44e-a1c8-da32022e05f5"]
+}], "Text",
+ CellChangeTimes->{
+  3.9248718000602684`*^9, {3.924872070355007*^9, 3.924872071325344*^9}, {
+   3.924872339867529*^9, 3.9248723414817066`*^9}, {3.9248723754521847`*^9, 
+   3.924872381217989*^9}, {3.924872443599718*^9, 3.9248724484416504`*^9}, {
+   3.9248726724501*^9, 3.9248726756917133`*^9}, 3.9248727425320435`*^9, {
+   3.9248727984737396`*^9, 3.9248728015416775`*^9}, {3.924872902202175*^9, 
+   3.92487290483222*^9}, {3.924873099774185*^9, 3.9248731020021305`*^9}, {
+   3.924873217613434*^9, 3.9248732279297333`*^9}, {3.924873276330452*^9, 
+   3.9248732944320374`*^9}, {3.9248733388948174`*^9, 
+   3.9248733405303555`*^9}, {3.924873376642084*^9, 
+   3.9248734094622135`*^9}},ExpressionUUID->"c03041b0-24eb-4644-9a58-\
+5b4a66bd3b40"]
+}, Open  ]],
+
+Cell[TextData[{
+ "3. Considera ahora l\[IAcute]neas de equipoblaci\[OAcute]n: puntos ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"(", 
+         RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["t", "TI"]}], ")"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "(x,t)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d0c85b5d-fc3f-ed4d-9116-1fa8beb49da2"],
+ " tal que\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["P", "TI"], 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["x", "TI"], ",", 
+             StyleBox["t", "TI"]}], ")"}], "\[LongEqual]", 
+         OverscriptBox[
+          StyleBox["P", "TI"], "~"], "\[LongEqual]", "constante"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "P(x,t)=\\tilde{P}=\\text{constante}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ccbeba42-6de0-fc41-8cea-5ffada894068"],
+ "\nMuestra que sobre una curva de nivel como la anterior, la raz\[OAcute]n ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["x", "TI"], "/", 
+         StyleBox["t", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "x/t", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "da9897f1-6b69-544d-8281-aaff962b8bf8"],
+ " est\[AAcute] dada por:"
+}], "Section",
+ CellChangeTimes->{{3.924840413135826*^9, 3.92484041351663*^9}, {
+  3.92484046282234*^9, 3.9248404788778057`*^9}, {3.924840527298849*^9, 
+  3.9248405902419243`*^9}, {3.9248408876674595`*^9, 
+  3.924840889511728*^9}},ExpressionUUID->"48b10f90-6680-9847-a160-\
+ff44e555e62e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[<|"boxes" -> FormBox[
+      RowBox[{
+        FractionBox[
+         StyleBox["x", "TI"], 
+         StyleBox["t", "TI"]], "\[LongEqual]", "\[PlusMinus]", 
+        SuperscriptBox[
+         RowBox[{"[", 
+           RowBox[{"4", "\[Alpha]", 
+             StyleBox["D", "TI"], "-", 
+             FractionBox[
+              RowBox[{"2", 
+                StyleBox["D", "TI"]}], 
+              StyleBox["t", "TI"]], "ln", 
+             RowBox[{"(", 
+               StyleBox["t", "TI"], ")"}], "-", 
+             FractionBox[
+              RowBox[{"4", 
+                StyleBox["D", "TI"]}], 
+              StyleBox["t", "TI"]], "ln", 
+             RowBox[{"(", 
+               RowBox[{"2", 
+                 SqrtBox[
+                  RowBox[{"\[Pi]", 
+                    StyleBox["D", "TI"]}]], 
+                 FractionBox[
+                  OverscriptBox[
+                   StyleBox["P", "TI"], "~"], 
+                  SubscriptBox[
+                   StyleBox["P", "TI"], "0"]]}], ")"}]}], "]"}], 
+         RowBox[{"1", "/", "2"}]]}], TraditionalForm], "errors" -> {}, 
+    "input" -> 
+    "\\frac{x}{t}=\\pm[4\\alpha D-\\frac{2D}{t}\\ln(t) \
+-\\frac{4D}{t}\\ln(2\\sqrt{\\pi D}\\frac{\\tilde{P}}{P_0})]^{1/2}", "state" -> 
+    "Boxes"|>,
+   "TeXAssistantTemplate"], 
+  TraditionalForm]],ExpressionUUID->"7b41930b-7b5f-a748-a211-f9d4179a3361"]], \
+"Subtitle",
+ CellChangeTimes->{3.924840893835245*^9},
+ TextAlignment->Center,ExpressionUUID->"01e1034b-2f31-2548-b66e-31c63e2819be"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["P", "TI"], 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["x", "TI"], ",", 
+             StyleBox["t", "TI"]}], ")"}], "\[LongEqual]", 
+         OverscriptBox[
+          StyleBox["P", "TI"], "~"]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "P(x,t)=\\tilde{P}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "0e1da3b6-606d-e043-9a30-7b4df1bbe204"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"\[Pi]", 
+               StyleBox["D", "TI"], 
+               StyleBox["t", "TI"]}]]}]], "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], "\[LongEqual]", 
+         OverscriptBox[
+          StyleBox["P", "TI"], "~"]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\Rightarrow \\frac{P_0}{2\\sqrt{\\pi Dt}}\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})=\\tilde{P}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e04eadf4-8ea0-084d-b263-2de42c002012"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "exp", 
+         RowBox[{"(", 
+           RowBox[{"\[Alpha]", 
+             StyleBox["t", "TI"], "-", 
+             FractionBox[
+              SuperscriptBox[
+               StyleBox["x", "TI"], "2"], 
+              RowBox[{"4", 
+                StyleBox["D", "TI"], 
+                StyleBox["t", "TI"]}]]}], ")"}], "\[LongEqual]", "2", 
+         SqrtBox[
+          RowBox[{"\[Pi]", 
+            StyleBox["D", "TI"], 
+            StyleBox["t", "TI"]}]], 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          OverscriptBox[
+           StyleBox["P", "TI"], "~"]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\Rightarrow \\exp(\\alpha t-\\frac{x^2}{4Dt})=2\\sqrt{\\pi \
+Dt}\\frac{P_0}{\\tilde{P}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7d1d3bcc-5915-f242-abc4-bdf44906a743"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          RowBox[{"exp", "(", 
+            RowBox[{"\[Alpha]", 
+              StyleBox["t", "TI"], "-", 
+              FractionBox[
+               SuperscriptBox[
+                StyleBox["x", "TI"], "2"], 
+               RowBox[{"4", 
+                 StyleBox["D", "TI"], 
+                 StyleBox["t", "TI"]}]]}], ")"}], 
+          SqrtBox[
+           StyleBox["t", "TI"]]], "\[LongEqual]", "2", 
+         SqrtBox[
+          RowBox[{"\[Pi]", 
+            StyleBox["D", "TI"]}]], 
+         FractionBox[
+          SubscriptBox[
+           StyleBox["P", "TI"], "0"], 
+          OverscriptBox[
+           StyleBox["P", "TI"], "~"]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\Rightarrow \\frac{\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})}{\\sqrt{t}}=2\\sqrt{\\pi D}\\frac{P_0}{\\tilde{P}}", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "04eed414-afb8-3e48-8296-65be8b877193"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "ln", 
+         RowBox[{"(", 
+           FractionBox[
+            RowBox[{"exp", "(", 
+              RowBox[{"\[Alpha]", 
+                StyleBox["t", "TI"], "-", 
+                FractionBox[
+                 SuperscriptBox[
+                  StyleBox["x", "TI"], "2"], 
+                 RowBox[{"4", 
+                   StyleBox["D", "TI"], 
+                   StyleBox["t", "TI"]}]]}], ")"}], 
+            SqrtBox[
+             StyleBox["t", "TI"]]], ")"}], "\[LongEqual]", "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"], 
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\ln(\\frac{\\exp(\\alpha \
+t-\\frac{x^2}{4Dt})}{\\sqrt{t}})=\\ln(2\\sqrt{\\pi \
+D}\\frac{P_0}{\\tilde{P}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "1099ea96-57d3-4643-9bf0-928ca6ca4ee4"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Alpha]", 
+         StyleBox["t", "TI"], "-", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          RowBox[{"4", 
+            StyleBox["D", "TI"], 
+            StyleBox["t", "TI"]}]], "-", "ln", 
+         RowBox[{"(", 
+           SqrtBox[
+            StyleBox["t", "TI"]], ")"}], "\[LongEqual]", "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"], 
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow\\alpha \
+t-\\frac{x^2}{4Dt}-\\ln(\\sqrt{t})=\\ln(2\\sqrt{\\pi \
+D}\\frac{P_0}{\\tilde{P}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "12cf1103-3a54-fe47-869f-4ed68ffe78f6"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "4", "\[Alpha]", 
+         StyleBox["D", "TI"], 
+         StyleBox["t", "TI"], "-", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          StyleBox["t", "TI"]], "-", "4", 
+         StyleBox["D", "TI"], "ln", 
+         RowBox[{"(", 
+           SqrtBox[
+            StyleBox["t", "TI"]], ")"}], "\[LongEqual]", "4", 
+         StyleBox["D", "TI"], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"], 
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow 4\\alpha \
+Dt-\\frac{x^2}{t}-4D\\ln(\\sqrt{t})=4D\\ln(2\\sqrt{\\pi \
+D}\\frac{P_0}{\\tilde{P}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2e84f004-e697-d449-b8de-d676f8d7f73d"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", "4", "\[Alpha]", 
+         StyleBox["D", "TI"], 
+         StyleBox["t", "TI"], "-", "4", 
+         StyleBox["D", "TI"], 
+         FractionBox["1", "2"], "ln", 
+         RowBox[{"(", 
+           StyleBox["t", "TI"], ")"}], "-", "4", 
+         StyleBox["D", "TI"], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"], 
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\frac{x^2}{t}=4 \\alpha Dt-4D\\frac{1}{2}\\ln(t)-4D\\ln(2\
+\\sqrt{\\pi D}\\frac{P_0}{\\tilde{P}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "10c14d9c-4ba4-e14a-810b-142bb488cf90"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          SuperscriptBox[
+           StyleBox["x", "TI"], "2"], 
+          SuperscriptBox[
+           StyleBox["t", "TI"], "2"]], "\[LongEqual]", "4", "\[Alpha]", 
+         StyleBox["D", "TI"], "-", 
+         FractionBox[
+          RowBox[{"2", 
+            StyleBox["D", "TI"]}], 
+          StyleBox["t", "TI"]], "ln", 
+         RowBox[{"(", 
+           StyleBox["t", "TI"], ")"}], "-", 
+         FractionBox[
+          RowBox[{"4", 
+            StyleBox["D", "TI"]}], 
+          StyleBox["t", "TI"]], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"], 
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\frac{x^2}{t^2}=4 \\alpha \
+D-\\frac{2D}{t}\\ln(t)-\\frac{4D}{t}\\ln(2\\sqrt{\\pi \
+D}\\frac{P_0}{\\tilde{P}})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2fb999b1-111a-774c-a2fe-e60c3686b48b"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", 
+         FractionBox[
+          StyleBox["x", "TI"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", "\[PlusMinus]", 
+         SqrtBox[
+          RowBox[{"4", "\[Alpha]", 
+            StyleBox["D", "TI"], "-", 
+            FractionBox[
+             RowBox[{"2", 
+               StyleBox["D", "TI"]}], 
+             StyleBox["t", "TI"]], "ln", 
+            RowBox[{"(", 
+              StyleBox["t", "TI"], ")"}], "-", 
+            FractionBox[
+             RowBox[{"4", 
+               StyleBox["D", "TI"]}], 
+             StyleBox["t", "TI"]], "ln", 
+            RowBox[{"(", 
+              RowBox[{"2", 
+                SqrtBox[
+                 RowBox[{"\[Pi]", 
+                   StyleBox["D", "TI"]}]], 
+                FractionBox[
+                 SubscriptBox[
+                  StyleBox["P", "TI"], "0"], 
+                 OverscriptBox[
+                  StyleBox["P", "TI"], "~"]]}], ")"}]}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\therefore \\frac{x}{t}=\\pm\\sqrt{4 \\alpha \
+D-\\frac{2D}{t}\\ln(t)-\\frac{4D}{t}\\ln(2\\sqrt{\\pi \
+D}\\frac{P_0}{\\tilde{P}})}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "816d5716-93fa-4f4e-bc81-baf3aec6b3e2"]
+}], "Text",
+ CellChangeTimes->{{3.924844701532625*^9, 3.9248447333181705`*^9}, {
+  3.9248447914646397`*^9, 3.9248447916804543`*^9}, {3.9248449899771175`*^9, 
+  3.92484499223275*^9}, {3.9248450248128834`*^9, 3.924845024980337*^9}, {
+  3.9248450962636833`*^9, 3.9248450965921497`*^9}, {3.9248713734247913`*^9, 
+  3.924871374069235*^9}, {3.9248714118530445`*^9, 3.924871412316366*^9}, {
+  3.9248714799414024`*^9, 3.924871480245943*^9}, {3.9248715632602234`*^9, 
+  3.92487156770751*^9}},ExpressionUUID->"b565eaad-f9f9-0c47-876d-\
+4762f02a9280"],
+
+Cell[TextData[{
+ "4. Muestra que si ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "t\\to\\infty", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "515961ca-4dc3-8440-904a-5e20967aad6a"],
+ " lo anterior se puede aproximar por"
+}], "Section",
+ CellChangeTimes->{{3.924840414755575*^9, 3.9248404151687346`*^9}, {
+  3.924840789626381*^9, 3.924840808776394*^9}, {3.9248409032487326`*^9, 
+  3.924840904067053*^9}},ExpressionUUID->"49f00034-5bcf-f74d-9116-\
+ddbee55c7ea7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[<|"boxes" -> FormBox[
+      RowBox[{
+        FractionBox[
+         StyleBox["x", "TI"], 
+         StyleBox["t", "TI"]], "\[LongEqual]", "\[PlusMinus]", "2", 
+        SqrtBox[
+         RowBox[{"\[Alpha]", 
+           StyleBox["D", "TI"]}]]}], TraditionalForm], "errors" -> {}, 
+    "input" -> "\\frac{x}{t}=\\pm 2\\sqrt{\\alpha D}", "state" -> "Boxes"|>,
+   "TeXAssistantTemplate"], 
+  TraditionalForm]],ExpressionUUID->"2ca540b1-b7a9-3941-bd7a-a926a7f2a175"]], \
+"Subtitle",
+ CellChangeTimes->{3.9248409223254147`*^9},
+ TextAlignment->Center,ExpressionUUID->"7a06dc40-c37e-2247-9c44-a6a44581a533"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          StyleBox["x", "TI"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", 
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], "\[PlusMinus]", 
+         SuperscriptBox[
+          RowBox[{"[", 
+            RowBox[{"4", "\[Alpha]", 
+              StyleBox["D", "TI"], "-", 
+              FractionBox[
+               RowBox[{"2", 
+                 StyleBox["D", "TI"]}], 
+               StyleBox["t", "TI"]], "ln", 
+              RowBox[{"(", 
+                StyleBox["t", "TI"], ")"}], "-", 
+              FractionBox[
+               RowBox[{"4", 
+                 StyleBox["D", "TI"]}], 
+               StyleBox["t", "TI"]], "ln", 
+              RowBox[{"(", 
+                RowBox[{"2", 
+                  SqrtBox[
+                   RowBox[{"\[Pi]", 
+                    StyleBox["D", "TI"]}]], 
+                  FractionBox[
+                   OverscriptBox[
+                    StyleBox["P", "TI"], "~"], 
+                   SubscriptBox[
+                    StyleBox["P", "TI"], "0"]]}], ")"}]}], "]"}], 
+          RowBox[{"1", "/", "2"}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\lim_{t\\to\\infty} \\frac{x}{t}=\\lim_{t\\to\\infty} \\pm[4\\alpha D-\
+\\frac{2D}{t}\\ln(t) -\\frac{4D}{t}\\ln(2\\sqrt{\\pi \
+D}\\frac{\\tilde{P}}{P_0})]^{1/2}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9d8f6d5c-3ba6-314e-b342-5c1c1531a61e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[LongEqual]", "\[PlusMinus]", 
+         SqrtBox[
+          RowBox[{
+            UnderscriptBox["lim", 
+             RowBox[{
+               StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+             LimitsPositioning -> True], "4", "\[Alpha]", 
+            StyleBox["D", "TI"], "-", 
+            UnderscriptBox["lim", 
+             RowBox[{
+               StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+             LimitsPositioning -> True], 
+            FractionBox[
+             RowBox[{"2", 
+               StyleBox["D", "TI"]}], 
+             StyleBox["t", "TI"]], "ln", 
+            RowBox[{"(", 
+              StyleBox["t", "TI"], ")"}], "-", 
+            UnderscriptBox["lim", 
+             RowBox[{
+               StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+             LimitsPositioning -> True], 
+            FractionBox[
+             RowBox[{"4", 
+               StyleBox["D", "TI"]}], 
+             StyleBox["t", "TI"]], "ln", 
+            RowBox[{"(", 
+              RowBox[{"2", 
+                SqrtBox[
+                 RowBox[{"\[Pi]", 
+                   StyleBox["D", "TI"]}]], 
+                FractionBox[
+                 OverscriptBox[
+                  StyleBox["P", "TI"], "~"], 
+                 SubscriptBox[
+                  StyleBox["P", "TI"], "0"]]}], ")"}]}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "=\\pm\\sqrt{\\lim_{t\\to\\infty}4\\alpha \
+D-\\lim_{t\\to\\infty}\\frac{2D}{t}\\ln(t) -\\lim_{t\\to\\infty}\\frac{4D}{t}\
+\\ln(2\\sqrt{\\pi D}\\frac{\\tilde{P}}{P_0})}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e28031a9-cf86-df4a-a75e-e4ad63f0c2e7"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], "4", "\[Alpha]", 
+         StyleBox["D", "TI"], "\[LongEqual]", "4", "\[Alpha]", 
+         StyleBox["D", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\lim_{t\\to\\infty}4\\alpha D=4\\alpha D", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "84832a77-4f1d-e64d-a055-a6391c6224f1"],
+ " por ser constante\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          RowBox[{"2", 
+            StyleBox["D", "TI"]}], 
+          StyleBox["t", "TI"]], "ln", 
+         RowBox[{"(", 
+           StyleBox["t", "TI"], ")"}], "\[LongEqual]", "2", 
+         StyleBox["D", "TI"], 
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          RowBox[{"ln", "(", 
+            StyleBox["t", "TI"], ")"}], 
+          StyleBox["t", "TI"]], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\lim_{t\\to\\infty}\\frac{2D}{t}\\ln(t)=2D\\lim_{t\\to\\infty}\\frac{\\\
+ln(t)}{t}=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9d831bcf-0f51-c44e-bc08-37f38e9ffe6f"],
+ " porque para ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["t", "TI"], TraditionalForm], "errors" -> {}, "input" -> "t", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c40c16e2-fe11-5a4b-81bf-0034ee597cfa"],
+ " suficientemente grande, ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["t", "TI"], ">", ">", "ln", 
+         RowBox[{"(", 
+           StyleBox["t", "TI"], ")"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "t>>\\ln(t)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "6e00e90f-ad00-9140-9844-f4f797024878"],
+ "\nO visto de otra forma: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[ForAll]", 
+         StyleBox["M", "TI"], ">", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\forall M>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "796cc248-b1fb-5949-a1e6-69c25f286a50"],
+ " se cumple que ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Exists]", 
+         StyleBox["t", "TI"], ">", "0", ":", 
+         StyleBox["t", "TI"], "-", "ln", 
+         RowBox[{"(", 
+           StyleBox["t", "TI"], ")"}], ">", 
+         StyleBox["M", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\exists t>0 : t-\\ln(t)>M", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b90b2945-bb23-ea45-a3a2-a5d13aabb8f0"],
+ ", por lo que el cociente diverge\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          RowBox[{"4", 
+            StyleBox["D", "TI"]}], 
+          StyleBox["t", "TI"]], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"], 
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"]]}], ")"}], "\[LongEqual]", "4", 
+         StyleBox["D", "TI"], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"], 
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"]]}], ")"}], 
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox["1", 
+          StyleBox["t", "TI"]], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\lim_{t\\to\\infty}\\frac{4D}{t}\\ln(2\\sqrt{\\pi \
+D}\\frac{\\tilde{P}}{P_0})=4D \\ln(2\\sqrt{\\pi \
+D}\\frac{\\tilde{P}}{P_0})\\lim_{t\\to\\infty}\\frac{1}{t}=0", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2cc980f0-ac19-b941-9ccc-361321a49ca8"],
+ "  se puede sacar todo ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"4", 
+         StyleBox["D", "TI"], "ln", 
+         RowBox[{"(", 
+           RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"\[Pi]", 
+                StyleBox["D", "TI"]}]], 
+             FractionBox[
+              OverscriptBox[
+               StyleBox["P", "TI"], "~"], 
+              SubscriptBox[
+               StyleBox["P", "TI"], "0"]]}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "4D \\ln(2\\sqrt{\\pi D}\\frac{\\tilde{P}}{P_0})", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "75e8630e-84ba-d44d-ad4b-a92775b5da60"],
+ " por ser constante\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          StyleBox["x", "TI"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", "\[PlusMinus]", 
+         SqrtBox[
+          RowBox[{"4", "\[Alpha]", 
+            StyleBox["D", "TI"], "-", "0", "-", "0"}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\lim_{t\\to\\infty} \\frac{x}{t}=\\pm\\sqrt{4\\alpha \
+D-0-0}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c45193e9-9c7d-ec4b-8195-b55780e5c9c1"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", 
+         UnderscriptBox["lim", 
+          RowBox[{
+            StyleBox["t", "TI"], "\[Rule]", "\[Infinity]"}], 
+          LimitsPositioning -> True], 
+         FractionBox[
+          StyleBox["x", "TI"], 
+          StyleBox["t", "TI"]], "\[LongEqual]", "\[PlusMinus]", "2", 
+         SqrtBox[
+          RowBox[{"\[Alpha]", 
+            StyleBox["D", "TI"]}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\therefore \\lim_{t\\to\\infty}\\frac{x}{t}=\\pm 2\\sqrt{\\alpha D}", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f396ae6d-c7b0-de45-98dd-6ee2f000e1fa"]
+}], "Text",
+ CellChangeTimes->{
+  3.9248410086751785`*^9, 3.9248420675706577`*^9, 3.924842242095875*^9, {
+   3.924842536865919*^9, 3.9248425396645994`*^9}, {3.924842986008642*^9, 
+   3.924843003444628*^9}, {3.924843039355711*^9, 3.924843100795561*^9}, {
+   3.9248434460640926`*^9, 3.924843449996441*^9}, {3.9248435271593895`*^9, 
+   3.9248435998392315`*^9}, {3.924843852387577*^9, 3.924843855952694*^9}, {
+   3.9248438970963764`*^9, 3.924843901843767*^9}, {3.9248439605627327`*^9, 
+   3.924843999281149*^9}, {3.9248440567306786`*^9, 
+   3.9248440609926395`*^9}},ExpressionUUID->"fb77cd30-8054-4948-b5f5-\
+3386626cb3d8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{718.5, 735},
+WindowMargins->{{-5.25, Automatic}, {Automatic, 0}},
+Magnification:>1. Inherited,
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"904bac85-6714-b84b-b8d9-87c559dfc0dc"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 154, 3, 98, "Title",ExpressionUUID->"ec46baf9-ae66-2b46-b364-d83c9a866355"],
+Cell[737, 27, 162, 3, 53, "Subtitle",ExpressionUUID->"476eddea-c13b-d843-b949-8fb5d4a14c68"],
+Cell[902, 32, 375, 7, 85, "Subtitle",ExpressionUUID->"51a69770-18b5-a94f-9656-4396d8ba2ed7"],
+Cell[1280, 41, 1327, 34, 84, "Subtitle",ExpressionUUID->"e09fbc0e-8331-a74c-8ba6-dd36d9949e5b"],
+Cell[2610, 77, 941, 23, 87, "Subtitle",ExpressionUUID->"26ab54e9-d56c-d649-b8ea-200313ac64cc"],
+Cell[3554, 102, 1570, 43, 94, "Subtitle",ExpressionUUID->"6828e080-b054-7341-8e8e-a87927a02cef"],
+Cell[CellGroupData[{
+Cell[5149, 149, 278, 5, 105, "Section",ExpressionUUID->"3682506e-0c98-fd4b-9308-a3fb10b2e105"],
+Cell[5430, 156, 3713, 92, 177, "Text",ExpressionUUID->"4f7df78d-d102-a848-bbe3-8da12f3ef225"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9180, 253, 843, 22, 109, "Section",ExpressionUUID->"d930b9e0-18e0-8942-b384-8821e085dd4b"],
+Cell[10026, 277, 18214, 495, 665, "Text",ExpressionUUID->"c03041b0-24eb-4644-9a58-5b4a66bd3b40"]
+}, Open  ]],
+Cell[28255, 775, 1773, 44, 225, "Section",ExpressionUUID->"48b10f90-6680-9847-a160-ff44e555e62e"],
+Cell[CellGroupData[{
+Cell[30053, 823, 1531, 40, 89, "Subtitle",ExpressionUUID->"01e1034b-2f31-2548-b66e-31c63e2819be"],
+Cell[31587, 865, 11327, 313, 458, "Text",ExpressionUUID->"b565eaad-f9f9-0c47-876d-4762f02a9280"],
+Cell[42917, 1180, 650, 15, 107, "Section",ExpressionUUID->"49f00034-5bcf-f74d-9116-ddbee55c7ea7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43604, 1200, 649, 15, 71, "Subtitle",ExpressionUUID->"7a06dc40-c37e-2247-9c44-a6a44581a533"],
+Cell[44256, 1217, 11276, 294, 464, "Text",ExpressionUUID->"fb77cd30-8054-4948-b5f5-3386626cb3d8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

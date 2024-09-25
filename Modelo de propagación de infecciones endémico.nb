@@ -1,0 +1,1592 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     61773,       1584]
+NotebookOptionsPosition[     58279,       1514]
+NotebookOutlinePosition[     58714,       1531]
+CellTagsIndexPosition[     58671,       1528]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Modelo de propagaci\[OAcute]n de infecciones end\[EAcute]mico", "Title",
+ CellChangeTimes->{{3.9215158916686*^9, 3.921515894194856*^9}, {
+  3.92151643089402*^9, 
+  3.921516437626087*^9}},ExpressionUUID->"d9168103-2136-524b-8b3a-\
+c5b52e1a1551"],
+
+Cell["Wei Le Hu Tang", "Subtitle",
+ CellChangeTimes->{{3.9215294910362873`*^9, 
+  3.9215294932852345`*^9}},ExpressionUUID->"b4064d07-3a1c-5346-8664-\
+570f40101b54"],
+
+Cell[CellGroupData[{
+
+Cell["Planteamiento", "Section",
+ CellChangeTimes->{{3.921529482850708*^9, 
+  3.921529484369301*^9}},ExpressionUUID->"9e486d13-3361-e848-8f52-\
+16370ee7d21f"],
+
+Cell[TextData[{
+ "Considerese el modelo de infecciones SIR y agr\[EAcute]guese una tasa de \
+mortandad y de natalidad tal que el sistema se mantenga con un total \
+poblacional constante\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["S", "TI"], "."], "\[LongEqual]", "-", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "-", "\[Mu]", 
+         StyleBox["S", "TI"], "+", "\[Mu]", 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\dot{S}=-\\beta SI-\\mu S+\\mu K", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c39ebb7b-049c-d444-88b6-e86cd8c40a06"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["I", "TI"], "."], "\[LongEqual]", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "-", "\[Gamma]", 
+         StyleBox["I", "TI"], "-", "\[Mu]", 
+         StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\dot{I}=\\beta SI-\\gamma I-\\mu I", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ba0d58dd-3f83-9e4d-950f-eb165e18677e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["R", "TI"], "."], "\[LongEqual]", "\[Gamma]", 
+         StyleBox["I", "TI"], "-", "\[Mu]", 
+         StyleBox["R", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\dot{R}=\\gamma I - \\mu R", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "85eb5f77-9a66-1c41-853d-ebada172c509"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["S", "TI"], "."], "+", 
+         OverscriptBox[
+          StyleBox["I", "TI"], "."], "+", 
+         OverscriptBox[
+          StyleBox["R", "TI"], "."], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\dot{S}+\\dot{I}+\\dot{R}=0", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4d1852b3-0a11-cf4b-936a-b2ed632a13f5"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         StyleBox["S", "TI"], "+", 
+         StyleBox["I", "TI"], "+", 
+         StyleBox["R", "TI"], "\[LongEqual]", 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow S+I+R=K", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "5078a169-1b26-4847-8e4c-56ec724a3143"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         StyleBox["R", "TI"], "\[LongEqual]", 
+         StyleBox["K", "TI"], "-", 
+         StyleBox["S", "TI"], "-", 
+         StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow R=K-S-I", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "6b248be3-3a50-4c46-9a40-597edf45fdb5"],
+ "\n\nEntonces se tiene el siguiente sistema:\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["S", "TI"], "."], "\[LongEqual]", "-", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "+", "\[Mu]", 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["K", "TI"], "-", 
+             StyleBox["S", "TI"]}], ")"}]}], TraditionalForm], "errors" -> {},
+      "input" -> "\\dot{S}=-\\beta SI+\\mu(K-S)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b5774199-a770-c240-a911-df77af8339df"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["I", "TI"], "."], "\[LongEqual]", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "-", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}], 
+         StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\dot{I}=\\beta SI-(\\gamma +\\mu)I", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "30459839-de78-f341-88f0-a285448b9e73"]
+}], "Text",
+ CellChangeTimes->{{3.9215250019217434`*^9, 3.921525061755665*^9}, {
+  3.9215251036124744`*^9, 3.9215253210508823`*^9}, {3.921525354965128*^9, 
+  3.9215254035969543`*^9}, {3.92152545693836*^9, 3.9215254571225815`*^9}, {
+  3.921525508103428*^9, 3.9215255272111835`*^9}, {3.921529308371489*^9, 
+  3.921529410329349*^9}, {3.9215296849884186`*^9, 3.921529689193081*^9}, {
+  3.921529816157915*^9, 
+  3.921529817683489*^9}},ExpressionUUID->"09297242-3688-4e4d-89fd-\
+75adfe37300e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Variables y par\[AAcute]metros", "Section",
+ CellChangeTimes->{{3.9215297564505024`*^9, 3.921529759831423*^9}, {
+  3.9215298003223915`*^9, 
+  3.921529803284029*^9}},ExpressionUUID->"db2f4c92-2c0a-1a4d-be2c-\
+ccf5f416d487"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["S", "TI"], "\[LongEqual]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "S=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "14be959c-6e48-db4c-954d-c67b8c6e70ea"],
+ " susceptibles\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["I", "TI"], "\[LongEqual]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "I=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "632941d1-fd5b-4345-a59d-d00fc06060af"],
+ " infectados\[LineSeparator]",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["R", "TI"], "\[LongEqual]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "R=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "24e73440-c6c6-df4f-a611-3f647503e00c"],
+ " recuperados\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["K", "TI"], "\[LongEqual]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "K=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "33475f79-2742-f243-bd5d-f920db4d3233"],
+ " poblaci\[OAcute]n total\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Beta]", "\[LongEqual]"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\beta=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "71610f16-d907-f648-895d-686ecff8db69"],
+ " tasa de interacci\[OAcute]n/infecci\[OAcute]n por contacto\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Gamma]", "\[LongEqual]"}], TraditionalForm], "errors" -> {},
+      "input" -> "\\gamma=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c19a35e0-f5cb-3347-b97c-605e595d9483"],
+ " tasa de recuperaci\[OAcute]n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Mu]", "\[LongEqual]"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\mu=", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "5906018b-deba-0b45-821a-f1c839546466"],
+ " tasa de mortandad/natalidad\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["S", "TI"], ",", 
+         StyleBox["I", "TI"], ",", 
+         StyleBox["R", "TI"], ",", 
+         StyleBox["K", "TI"], "\[GreaterEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "S,I,R,K\\geq 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "731cfa54-1521-1d47-be47-8b427bab66c4"],
+ ", porque son poblaciones y no hay negativas.\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Beta]", ">", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\beta>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c3f775b0-0ecb-274b-adff-450ae316403c"],
+ ", por ser tasa de infecci\[OAcute]n; si fuera negativa, el t\[EAcute]rmino ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\beta SI", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "0b8be540-3091-2a4b-b785-b411f7407c3a"],
+ " implicar\[IAcute]a que el contacto con susceptibles est\[AAcute] curando a \
+los infectados; y si fuera cero, este modelo ser\[IAcute]a tan s\[OAcute]lo \
+de nacimiento y muerte.\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Gamma]", ">", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\gamma>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "009bd5e1-1e81-1f48-9301-69e1fc1a1537"],
+ ", an\[AAcute]logamente, si fuera no positiva, eventualmente todo el mundo \
+estar\[IAcute]a infectado, porque no hay qui\[EAcute]n se recupere, y se \
+busca que sea una tasa de recuperaci\[OAcute]n.\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Mu]", ">", "0"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mu>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "3cd42e19-4ba8-aa48-9036-509303741cbc"],
+ ", si \[EAcute]sta fuera cero, se regresar\[IAcute]a al modelo original y no \
+se busca eso; y si fuera negativo, nacer\[IAcute]a gente infectada y \
+\[OpenCurlyDoubleQuote]recuperada\[CloseCurlyDoubleQuote], que no tiene mucho \
+sentido"
+}], "Text",
+ CellChangeTimes->{{3.921529824222025*^9, 3.921529889824353*^9}, {
+  3.921529967544926*^9, 3.921530235129473*^9}, {3.921530276848538*^9, 
+  3.9215303910777836`*^9}, {3.921531950994455*^9, 
+  3.921531955570109*^9}},ExpressionUUID->"54081eb3-99fe-264c-bc6b-\
+11f412457b39"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Puntos de equilibrio", "Section",
+ CellChangeTimes->{{3.921529457358122*^9, 
+  3.921529460629238*^9}},ExpressionUUID->"4aa57b2a-0c19-554e-adc1-\
+9299ed190231"],
+
+Cell[TextData[{
+ "N\[OAcute]tese antes que:\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["S", "TI"], "."], "\[LongEqual]", "0 ", 
+         "\[DoubleLongLeftRightArrow] ", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "\[LongEqual]", "\[Mu]", 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["K", "TI"], "-", 
+             StyleBox["S", "TI"]}], ")"}]}], TraditionalForm], "errors" -> {},
+      "input" -> "\\dot{S}=0\\iff \\beta SI=\\mu(K-S)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c30e2e93-f29b-da47-87bd-c86b74ad2030"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["I", "TI"], "."], "\[LongEqual]", "0 ", 
+         "\[DoubleLongLeftRightArrow] ", "\[Beta]", 
+         StyleBox["S", "TI"], 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}], 
+         StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\dot{I}=0\\iff\\beta SI=(\\gamma +\\mu)I", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c74a4132-2543-6748-905f-1960147c4f4c"]
+}], "Text",
+ CellChangeTimes->{
+  3.921530553599549*^9, {3.921530611762863*^9, 
+   3.921530619756945*^9}},ExpressionUUID->"be33a50b-9265-a043-9e61-\
+2e0ad54f9c7b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Caso 1: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["I", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "I=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "8bd3fa21-a481-da41-b0c2-2a7bfe47b72e"]
+}], "Subsection",
+ CellChangeTimes->{{3.921529551517641*^9, 3.921529584758972*^9}, {
+  3.921529637313097*^9, 3.921529641423218*^9}, {3.921530437107872*^9, 
+  3.921530485170683*^9}},ExpressionUUID->"7a649dc4-4e32-2e4d-9b38-\
+1d50eac4ad68"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Mu]", 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["K", "TI"], "-", 
+             StyleBox["S", "TI"]}], ")"}], "\[LongEqual]", "0"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\mu(K-S)=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "85d2da76-6e5f-b84a-9837-7092e1b20b0f"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["K", "TI"], "-", 
+         StyleBox["S", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\iff K-S=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c73efd04-6792-1947-8603-e8e2023056a3"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["S", "TI"], "\[LongEqual]", 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\iff S=K", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "edd35842-da42-424f-8e88-456b36643ec3"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", "(", 
+         RowBox[{
+           StyleBox["K", "TI"], ",", "0"}], ")"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\therefore (K,0)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "502eda04-9625-524a-96ff-7593f75a87ca"],
+ " es un punto de equilibrio\nNo existen infectados, por lo que nadie puede \
+contraer la enfermedad, entonces los susceptibles se mantienen constantes y \
+son toda la poblaci\[OAcute]n."
+}], "Text",
+ CellChangeTimes->{
+  3.9215305109177856`*^9, {3.921530641290947*^9, 3.921530772619375*^9}, {
+   3.921530830809157*^9, 3.921530847368908*^9}, 3.921530883247603*^9, {
+   3.921531083750749*^9, 
+   3.921531092535452*^9}},ExpressionUUID->"c91e8431-4d46-d44e-923e-\
+67a727e8cad2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Caso 2: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["I", "TI"], "\[NotEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "I\\neq 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "61545488-6048-b047-960d-ec2925ecae97"]
+}], "Subsection",
+ CellChangeTimes->{{3.92153080433803*^9, 
+  3.921530810550814*^9}},ExpressionUUID->"b69a4dc4-59d0-1e4e-89eb-\
+18543b2401d0"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         StyleBox["I", "TI"], ">", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Rightarrow I>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e8c57621-430f-ac41-a982-bc8152263a7c"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["S", "TI"], "."], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\dot{S}=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c994b134-c120-c34c-b637-102293e57f4a"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Beta]", 
+         StyleBox["S", "TI"], "\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\Rightarrow \\beta S=(\\gamma+\\mu)", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e2f659d7-8dff-bc4c-a514-79cfe16d8a2d"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["S", "TI"], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\iff S=\\frac{\\gamma+\\mu}{\\beta}", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7357bf2b-efd3-e447-b2b6-9383c415b5be"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         OverscriptBox[
+          StyleBox["I", "TI"], "."], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\dot{I}=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7fd5dd97-96c3-8044-96cf-4a310a160cb0"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"\[Mu]", "(", 
+            RowBox[{
+              StyleBox["K", "TI"], "-", 
+              StyleBox["S", "TI"]}], ")"}], 
+          RowBox[{"\[Beta]", 
+            StyleBox["S", "TI"]}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\iff I=\\frac{\\mu(K-S)}{\\beta S}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "568cd166-252b-774a-b25d-16b0f9facb0a"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"\[Mu]", "(", 
+            RowBox[{
+              StyleBox["K", "TI"], "-", 
+              FractionBox[
+               RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"]}], ")"}], 
+          RowBox[{"\[Beta]", 
+            FractionBox[
+             RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"]}]]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\iff I=\\frac{\\mu(K-\\frac{\\gamma+\\mu}{\\beta})}{\\beta \
+\\frac{\\gamma+\\mu}{\\beta}}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "6f719a76-3815-8246-96bf-6cdc7ec7ee5d"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"\[Mu]", 
+            RowBox[{"(", 
+              RowBox[{"1", "-", 
+                FractionBox[
+                 RowBox[{"\[Gamma]", "+", "\[Mu]"}], 
+                 RowBox[{"\[Beta]", 
+                   StyleBox["K", "TI"]}]]}], ")"}], 
+            StyleBox["K", "TI"]}], 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\iff I=\\frac{\\mu(1-\\frac{\\gamma+\\mu}{\\beta K})K}{\\gamma+\\mu}", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "88e1f227-2db3-be40-ac46-759afb8585f9"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         FractionBox["\[Mu]", 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              FractionBox[
+               RowBox[{"\[Beta]", 
+                 StyleBox["K", "TI"]}], 
+               RowBox[{"\[Gamma]", "+", "\[Mu]"}]]]}], ")"}], 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\iff I=\\frac{\\mu}{\\gamma+\\mu}(1-\\frac{1}{\\frac{\\beta \
+K}{\\gamma+\\mu}})K", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e544279b-fcad-ec49-94ec-727366f8da70"],
+ "\nDef\[IAcute]nase ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], "\[LongEqual]", 
+         FractionBox[
+          RowBox[{"\[Beta]", 
+            StyleBox["K", "TI"]}], 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "R_0=\\frac{\\beta K}{\\gamma+\\mu}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4ab35630-c735-9243-898f-6ff0f70059c7"],
+ " que representa el n\[UAcute]mero de infecciones promedio causadas por un s\
+\[OAcute]lo indviduo en una poblaci\[OAcute]n enteramente susceptible \
+(potencial de infecci\[OAcute]n): ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Beta]", 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\beta K", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9cff0c45-c606-2443-9bc3-9aef7f355194"],
+ " es el n\[UAcute]mero de interacciones por unidad de tiempo de un individuo \
+en una poblaci\[OAcute]n enteramente susceptible, y ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Gamma]", "+", "\[Mu]"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\gamma+\\mu", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "94bceee1-d681-7a48-9aae-e1a92bb2beda"],
+ " es una tasa de correcci\[OAcute]n por recuperaci\[OAcute]n y mortandad.\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         StyleBox["I", "TI"], "\[LongEqual]", 
+         FractionBox["\[Mu]", 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              SubscriptBox[
+               StyleBox["R", "TI"], "0"]]}], ")"}], 
+         StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow I=\\frac{\\mu}{\\gamma+\\mu}(1-\\frac{1}{R_0})K", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a73c37ef-1ca2-814b-9812-c927643dd549"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", "(", 
+         RowBox[{
+           FractionBox[
+            RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"], ",", 
+           FractionBox["\[Mu]", 
+            RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+           RowBox[{"(", 
+             RowBox[{"1", "-", 
+               FractionBox["1", 
+                SubscriptBox[
+                 StyleBox["R", "TI"], "0"]]}], ")"}], 
+           StyleBox["K", "TI"]}], ")"}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\therefore (\\frac{\\gamma+\\mu}{\\beta},\\frac{\\mu}{\\gamma+\\mu}(1-\
+\\frac{1}{R_0})K)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "6e9615e2-55ed-804d-8fae-369e872c29f0"],
+ " es un punto de equilibrio\nEn este punto de la propagaci\[OAcute]n, las \
+infecciones, nacimientos y muertes son tales que ambas poblaciones se \
+mantienen constantes."
+}], "Text",
+ CellChangeTimes->{{3.92153087576264*^9, 3.921530909178631*^9}, {
+   3.921530939305601*^9, 3.9215310290269556`*^9}, {3.921531079206307*^9, 
+   3.921531104621987*^9}, {3.921531154507185*^9, 3.92153115824774*^9}, {
+   3.92153119207238*^9, 3.921531211030779*^9}, {3.921531347562364*^9, 
+   3.921531425596716*^9}, {3.9215314896518*^9, 3.921531492201897*^9}, 
+   3.9215315402593203`*^9, 3.921531679002533*^9, {3.921531747570478*^9, 
+   3.921531765053505*^9}, {3.92153180702627*^9, 3.921531890973259*^9}, {
+   3.9215319733153095`*^9, 3.921532106899002*^9}, {3.9215321536483574`*^9, 
+   3.921532275487116*^9}, {3.921532314217804*^9, 3.921532343951752*^9}, 
+   3.9215323812589493`*^9},ExpressionUUID->"d2e660b0-e7bb-7a4b-91b0-\
+0ab421390662"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Estabilidades", "Section",
+ CellChangeTimes->{{3.9215324038202496`*^9, 
+  3.921532405728796*^9}},ExpressionUUID->"c053aa01-730c-f144-bbe0-\
+23253394aef8"],
+
+Cell[TextData[{
+ "La matriz Jacobiana de este sistema es:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        RowBox[{
+          StyleBox["J", "TI"], "\[LongEqual]"}], TraditionalForm], 
+      "errors" -> {}, "input" -> "J=", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], 
+    RowBox[{"(", GridBox[{
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            FractionBox[
+             RowBox[{"\[PartialD]", 
+               OverscriptBox[
+                StyleBox["S", "TI"], "."]}], 
+             RowBox[{"\[PartialD]", 
+               StyleBox["S", "TI"]}]], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\frac{\\partial\\dot{S}}{\\partial S}", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            FractionBox[
+             RowBox[{"\[PartialD]", 
+               OverscriptBox[
+                StyleBox["S", "TI"], "."]}], 
+             RowBox[{"\[PartialD]", 
+               StyleBox["I", "TI"]}]], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\frac{\\partial\\dot{S}}{\\partial I}", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"]},
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            FractionBox[
+             RowBox[{"\[PartialD]", 
+               OverscriptBox[
+                StyleBox["I", "TI"], "."]}], 
+             RowBox[{"\[PartialD]", 
+               StyleBox["S", "TI"]}]], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\frac{\\partial\\dot{I}}{\\partial S}", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            FractionBox[
+             RowBox[{"\[PartialD]", 
+               OverscriptBox[
+                StyleBox["I", "TI"], "."]}], 
+             RowBox[{"\[PartialD]", 
+               StyleBox["I", "TI"]}]], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\frac{\\partial\\dot{I}}{\\partial I}", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"]}
+      }], ")"}], 
+    TemplateBox[<|
+     "boxes" -> FormBox["\[LongEqual]", TraditionalForm], "errors" -> {}, 
+      "input" -> "=", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], 
+    RowBox[{"(", GridBox[{
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "\[Beta]", 
+              StyleBox["I", "TI"], "-", "\[Mu]"}], TraditionalForm], 
+          "errors" -> {}, "input" -> "-\\beta I-\\mu", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "\[Beta]", 
+              StyleBox["S", "TI"]}], TraditionalForm], "errors" -> {}, 
+          "input" -> "-\\beta S", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]},
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"\[Beta]", 
+              StyleBox["I", "TI"]}], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\beta I", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"\[Beta]", 
+              StyleBox["S", "TI"], "-", 
+              RowBox[{"(", 
+                RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}]}], TraditionalForm],
+           "errors" -> {}, "input" -> "\\beta S-(\\gamma+\\mu)", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"]}
+      }], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "3632a4f5-92b3-ac4f-90e9-51bbcd6a87a1"]
+}], "Text",
+ CellChangeTimes->{{3.921532448675787*^9, 3.9215324706261845`*^9}, {
+  3.9215325103749657`*^9, 3.921532560478018*^9}, {3.921532628895617*^9, 
+  3.92153264107251*^9}},ExpressionUUID->"d1157274-f7e2-e74a-a73e-\
+73761184de9e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Caso 1: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["I", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "I=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e7f9807b-4713-434b-aac7-102a9ea00179"]
+}], "Subsection",
+ CellChangeTimes->{{3.9215324148416653`*^9, 
+  3.921532421731245*^9}},ExpressionUUID->"2b55cf6f-83c3-1249-ad43-\
+1e7d7ce8c0e3"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         RowBox[{"(", 
+           RowBox[{
+             SuperscriptBox[
+              StyleBox["S", "TI"], "*"], ",", 
+             SuperscriptBox[
+              StyleBox["I", "TI"], "*"]}], ")"}], "\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{
+             StyleBox["K", "TI"], ",", "0"}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\Rightarrow (S^*,I^*)=(K,0)", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9c8ab545-c3dc-cf47-bdfe-6ab68b614733"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        RowBox[{"\[DoubleRightArrow]", 
+          StyleBox["J", "TI"], "\[LongEqual]"}], TraditionalForm], 
+      "errors" -> {}, "input" -> "\\Rightarrow J=", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], 
+    RowBox[{"(", GridBox[{
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "\[Mu]"}], TraditionalForm], "errors" -> {}, "input" -> 
+          "-\\mu", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "\[Beta]", 
+              StyleBox["K", "TI"]}], TraditionalForm], "errors" -> {}, 
+          "input" -> "-\\beta K", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]},
+       {
+        TemplateBox[<|
+         "boxes" -> FormBox["0", TraditionalForm], "errors" -> {}, "input" -> 
+          "0", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"\[Beta]", 
+              StyleBox["K", "TI"], "-", 
+              RowBox[{"(", 
+                RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}]}], TraditionalForm],
+           "errors" -> {}, "input" -> "\\beta K-(\\gamma+\\mu)", "state" -> 
+          "Boxes"|>,
+         "TeXAssistantTemplate"]}
+      }], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "fef742d7-25fa-e741-b85f-f5be67e4438d"],
+ "\nComo es una matriz triangular superior, sus eigenvalores son:\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Lambda]", "1"], "\[LongEqual]", "-", "\[Mu]", "<", 
+         "0"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\lambda_1=-\\mu<0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "35afdc00-8371-4e47-ba0f-42171c7733c8"],
+ "\t",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Lambda]", "2"], "\[LongEqual]", "\[Beta]", 
+         StyleBox["K", "TI"], "-", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\lambda_2=\\beta K-(\\gamma+\\mu)", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "da4ba6fb-0129-6d4f-8a52-3bd491d17c52"],
+ "\n\nComo ya se conoce el signo de ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4f975d8c-cf76-7846-b61a-630babf32bf6"],
+ ", s\[OAcute]lo queda analizar los casos para ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "60a7fbfc-9e94-8241-bef7-4524416cd7d5"]
+}], "Text",
+ CellChangeTimes->{{3.9215327763063593`*^9, 3.921532786085503*^9}, {
+   3.921532840104042*^9, 3.921532840104042*^9}, {3.921617338659371*^9, 
+   3.921617366888911*^9}, 3.9216173985758724`*^9, {3.921617504662234*^9, 
+   3.9216175300546265`*^9}, {3.921617587076027*^9, 
+   3.921617604759939*^9}},ExpressionUUID->"36f8d156-0631-cd48-aef1-\
+312a06daf6ea"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Lambda]", "2"], "<", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\lambda_2<0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "fa213ea0-94aa-1f46-a5a8-3625d545a5a7"],
+ " Estrella estable"
+}], "Subsubsection",
+ CellChangeTimes->{
+  3.9216175135975876`*^9, {3.9216180089278316`*^9, 
+   3.9216180263739033`*^9}},ExpressionUUID->"29e7d04a-fd94-0f45-a4b5-\
+de85752d906a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Beta]", 
+         StyleBox["K", "TI"], "-", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}], "<", "0"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\beta K-(\\gamma+\\mu)<0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ccdd6735-1130-d34f-8227-3e93310804cb"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Beta]", 
+         StyleBox["K", "TI"], "<", "\[Gamma]", "+", "\[Mu]"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\beta K<\\gamma+\\mu", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4de72bbb-1e73-9144-9443-db548fba475f"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          RowBox[{"\[Beta]", 
+            StyleBox["K", "TI"]}], 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]], "<", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\frac{\\beta K}{\\gamma+\\mu}<1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "92c48733-7552-3341-8615-cad0cf0c4c0e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", 
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], "<", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\therefore R_0<1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "6341c318-d3a9-ee41-ae8f-2538e1e40d9a"]
+}], "Text",
+ CellChangeTimes->{{3.9216180642339725`*^9, 3.921618094233043*^9}, {
+  3.921618125295025*^9, 3.921618126562973*^9}, {3.9216181676998367`*^9, 
+  3.921618168732559*^9}},ExpressionUUID->"a87843ec-b643-9945-9272-\
+4ed1111f8716"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Lambda]", "2"], ">", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\lambda_2>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c539437a-a498-834d-9ea8-cee2bf0e1650"],
+ " Punto silla"
+}], "Subsubsection",
+ CellChangeTimes->{{3.921618033421493*^9, 
+  3.921618050713693*^9}},ExpressionUUID->"e7dcfc66-9669-9347-bb17-\
+1115a04e2b79"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Beta]", 
+         StyleBox["K", "TI"], "-", 
+         RowBox[{"(", 
+           RowBox[{"\[Gamma]", "+", "\[Mu]"}], ")"}], ">", "0"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\beta K-(\\gamma+\\mu)>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b4fe9528-22e3-344e-9fe0-41f7407af8ae"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Beta]", 
+         StyleBox["K", "TI"], ">", "\[Gamma]", "+", "\[Mu]"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\beta K > \\gamma+\\mu", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b6a2c999-53cd-4448-9c42-dbb4253a1319"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         FractionBox[
+          RowBox[{"\[Beta]", 
+            StyleBox["K", "TI"]}], 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]], ">", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\Rightarrow \\frac{\\beta K}{\\gamma+\\mu}>1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4e06b2ec-623d-a343-912c-f0e25ed82419"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Therefore]", 
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], ">", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\therefore R_0>1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2e8336f2-a19d-fa47-940b-2818cd5f219c"]
+}], "Text",
+ CellChangeTimes->{
+  3.921618190995722*^9},ExpressionUUID->"ee8162a1-ae79-1f40-b7f3-\
+701dd71bd780"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Caso 2: ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["I", "TI"], "\[NotEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "I\\neq 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4b4c7c77-7b41-4d4a-9204-208138b1340f"]
+}], "Subsection",
+ CellChangeTimes->{{3.921533022513474*^9, 
+  3.9215330256850605`*^9}},ExpressionUUID->"2c81e773-458f-644d-8ba4-\
+136494fb5597"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", 
+         RowBox[{"(", 
+           RowBox[{
+             SuperscriptBox[
+              StyleBox["S", "TI"], "*"], ",", 
+             SuperscriptBox[
+              StyleBox["I", "TI"], "*"]}], ")"}], "\[LongEqual]", 
+         RowBox[{"(", 
+           RowBox[{
+             FractionBox[
+              RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"], ",", 
+             FractionBox["\[Mu]", 
+              RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+             RowBox[{"(", 
+               RowBox[{"1", "-", 
+                 FractionBox["1", 
+                  SubscriptBox[
+                   StyleBox["R", "TI"], "0"]]}], ")"}], 
+             StyleBox["K", "TI"]}], ")"}]}], TraditionalForm], "errors" -> {},
+      "input" -> 
+     "\\Rightarrow (S^*,I^*)= \
+(\\frac{\\gamma+\\mu}{\\beta},\\frac{\\mu}{\\gamma+\\mu}(1-\\frac{1}{R_0})K)",
+      "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4fde7583-c520-ee44-8b16-fdeb7df002de"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        RowBox[{"\[DoubleRightArrow]", 
+          StyleBox["J", "TI"], "\[LongEqual]"}], TraditionalForm], 
+      "errors" -> {}, "input" -> "\\Rightarrow J=", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], 
+    RowBox[{"(", GridBox[{
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "(", 
+              RowBox[{"\[Beta]", 
+                SuperscriptBox[
+                 StyleBox["I", "TI"], "*"], "+", "\[Mu]"}], ")"}], 
+            TraditionalForm], "errors" -> {}, "input" -> "-(\\beta I^*+\\mu)",
+           "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"-", "\[Beta]", 
+              SuperscriptBox[
+               StyleBox["S", "TI"], "*"]}], TraditionalForm], "errors" -> {}, 
+          "input" -> "-\\beta S^*", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]},
+       {
+        TemplateBox[<|"boxes" -> FormBox[
+            RowBox[{"\[Beta]", 
+              SuperscriptBox[
+               StyleBox["I", "TI"], "*"]}], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\beta I^*", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|
+         "boxes" -> FormBox["0", TraditionalForm], "errors" -> {}, "input" -> 
+          "0", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}
+      }], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "451aef09-5f47-a14a-84b9-bb464961e853"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[DoubleRightArrow]", "\[Tau]", "\[LongEqual]", "-", 
+         RowBox[{"(", 
+           RowBox[{"\[Beta]", 
+             SuperscriptBox[
+              StyleBox["I", "TI"], "*"], "+", "\[Mu]"}], ")"}]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\Rightarrow \\tau=-(\\beta I^* + \\mu)", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "12155728-99a3-b04e-a506-fa346d5ff57f"],
+ "\t",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[CapitalDelta]", "\[LongEqual]", 
+         SuperscriptBox["\[Beta]", "2"], 
+         SuperscriptBox[
+          StyleBox["S", "TI"], "*"], 
+         SuperscriptBox[
+          StyleBox["I", "TI"], "*"]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Delta=\\beta^2 S^* I^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "dca69a1f-603e-5d49-b0e0-242b7d9d5cb7"],
+ "\nN\[OAcute]tese que por el an\[AAcute]lisis de los par\[AAcute]metros:\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[Tau]", "<", "0"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\tau<0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "20b1d3f4-f9f8-5f4d-9c7c-609a03e059bf"],
+ "\t\t",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[CapitalDelta]", "\[GreaterEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\Delta\\geq 0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2aa26d61-0ebe-7145-9435-ac6f7bec8675"],
+ "\nPor la traza se sabe que es un punto estable, falta ver en qu\[EAcute] \
+momento es de tipo estrella o espiral."
+}], "Text",
+ CellChangeTimes->{
+  3.9215330808600082`*^9, {3.9215331253915462`*^9, 3.921533138166319*^9}, {
+   3.921533184451679*^9, 3.921533184451679*^9}, {3.921533271224234*^9, 
+   3.921533272943399*^9}, {3.921533325461067*^9, 3.921533331970753*^9}, {
+   3.921533372918892*^9, 3.921533411851902*^9}, {3.921533445919832*^9, 
+   3.9215334506341305`*^9}, 3.921537488216767*^9, {3.921537811237793*^9, 
+   3.921537840743733*^9}, {3.921539083506052*^9, 3.921539084548817*^9}, {
+   3.9215391162840023`*^9, 3.9215391434139194`*^9}, {3.9215400522190266`*^9, 
+   3.921540056034727*^9}},ExpressionUUID->"f32943a6-71ed-4a49-8b65-\
+21439f1e9860"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[CapitalDelta]", "<", 
+         FractionBox[
+          SuperscriptBox["\[Tau]", "2"], "4"]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\Delta<\\frac{\\tau^2}{4}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7ad48df4-f5f8-f34d-8959-989cc0423f8e"],
+ " Estrella estable"
+}], "Subsubsection",
+ CellChangeTimes->{{3.92154154029299*^9, 3.921541552840418*^9}, {
+  3.921619723349607*^9, 
+  3.921619724221693*^9}},ExpressionUUID->"27068893-df91-2049-b1a5-\
+a482a1896e8a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         SuperscriptBox["\[Beta]", "2"], 
+         SuperscriptBox[
+          StyleBox["S", "TI"], "*"], 
+         SuperscriptBox[
+          StyleBox["I", "TI"], "*"], "<", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Beta]", 
+               SuperscriptBox[
+                StyleBox["I", "TI"], "*"], "+", "\[Mu]"}], ")"}], "2"], 
+          "4"]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\iff \\beta^2 S^* I^*<\\frac{(\\beta I^* +\\mu)^2}{4}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "85c4d8a4-ae7f-614a-b3ea-8a0dcccddf08"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         SuperscriptBox["\[Beta]", "2"], 
+         FractionBox[
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}], "\[Beta]"], 
+         FractionBox["\[Mu]", 
+          RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              SubscriptBox[
+               StyleBox["R", "TI"], "0"]]}], ")"}], 
+         StyleBox["K", "TI"], "<", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Beta]", 
+               FractionBox["\[Mu]", 
+                RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+               RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                   FractionBox["1", 
+                    SubscriptBox[
+                    StyleBox["R", "TI"], "0"]]}], ")"}], 
+               StyleBox["K", "TI"], "+", "\[Mu]"}], ")"}], "2"], "4"]}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\iff \\beta^2 \\frac{\\gamma+\\mu}{\\beta} \
+\\frac{\\mu}{\\gamma+\\mu}(1-\\frac{1}{R_0})K<\\frac{(\\beta\\frac{\\mu}{\\\
+gamma+\\mu}(1-\\frac{1}{R_0})K +\\mu)^2}{4}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ea40e1d6-9e56-df44-a652-3092e8ad9354"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", "\[Beta]\[Mu]", 
+         StyleBox["K", "TI"], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              SubscriptBox[
+               StyleBox["R", "TI"], "0"]]}], ")"}], "<", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Mu]", 
+               FractionBox[
+                RowBox[{"\[Beta]", 
+                  StyleBox["K", "TI"]}], 
+                RowBox[{"\[Gamma]", "+", "\[Mu]"}]], 
+               RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                   FractionBox["1", 
+                    SubscriptBox[
+                    StyleBox["R", "TI"], "0"]]}], ")"}], "+", "\[Mu]"}], 
+             ")"}], "2"], "4"], "\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Mu]", 
+               SubscriptBox[
+                StyleBox["R", "TI"], "0"], 
+               RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                   FractionBox["1", 
+                    SubscriptBox[
+                    StyleBox["R", "TI"], "0"]]}], ")"}], "+", "\[Mu]"}], 
+             ")"}], "2"], "4"], "\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Mu]", 
+               RowBox[{"(", 
+                 RowBox[{
+                   SubscriptBox[
+                    StyleBox["R", "TI"], "0"], "-", "1"}], ")"}], "+", 
+               "\[Mu]"}], ")"}], "2"], "4"], "\[LongEqual]", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"\[Mu]", 
+               SubscriptBox[
+                StyleBox["R", "TI"], "0"]}], ")"}], "2"], "4"], 
+         "\[LongEqual]", 
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["\[Mu]", "2"], 
+            SubsuperscriptBox[
+             StyleBox["R", "TI"], "0", "2"]}], "4"]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\iff \\beta\\mu K (1-\\frac{1}{R_0})<\\frac{(\\mu\\frac{\\beta \
+K}{\\gamma+\\mu}(1-\\frac{1}{R_0}) +\\mu)^2}{4}=\\frac{(\\mu R_0 \
+(1-\\frac{1}{R_0}) +\\mu)^2}{4}=\\frac{(\\mu (R_0-1) \
++\\mu)^2}{4}=\\frac{(\\mu R_0)^2}{4}=\\frac{\\mu^2 R_0^2}{4}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "200d18c8-6cac-0548-b6a2-dae0baed0075"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         FractionBox[
+          RowBox[{"4", "\[Beta]", 
+            StyleBox["K", "TI"]}], "\[Mu]"], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              SubscriptBox[
+               StyleBox["R", "TI"], "0"]]}], ")"}], "<", 
+         SubsuperscriptBox[
+          StyleBox["R", "TI"], "0", "2"]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\iff \\frac{4\\beta K}{\\mu} (1-\\frac{1}{R_0})<R_0^2", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "96ac897c-eb6d-2145-9b5e-e6a206bc38f2"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], ">", "2", 
+         SqrtBox[
+          RowBox[{
+            FractionBox[
+             RowBox[{"\[Beta]", 
+               StyleBox["K", "TI"]}], "\[Mu]"], "(", 
+            RowBox[{"1", "-", 
+              FractionBox["1", 
+               SubscriptBox[
+                StyleBox["R", "TI"], "0"]]}], ")"}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\iff R_0>2\\sqrt{ \\frac{\\beta K}{\\mu} (1-\\frac{1}{R_0})}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9f6afb64-3cd0-0e4a-bec1-99ccc19e0fbd"]
+}], "Text",
+ CellChangeTimes->{
+  3.921541611958599*^9, {3.921541782251776*^9, 3.921541801058506*^9}, {
+   3.9215418967454185`*^9, 3.921541921530369*^9}, {3.9215420025345974`*^9, 
+   3.921542005419878*^9}, 3.921551059755413*^9, 3.9215515676810856`*^9, {
+   3.921552034784807*^9, 3.921552037560188*^9}, {3.9215521915203114`*^9, 
+   3.921552193984541*^9}, {3.9216167083581905`*^9, 3.921616720370716*^9}, {
+   3.9216170073887463`*^9, 3.9216170143786583`*^9}, {3.921618683259359*^9, 
+   3.921618683799412*^9}, {3.9216188061017723`*^9, 3.921618846490198*^9}, 
+   3.921618976744543*^9, 3.921619022361141*^9, {3.921619064047623*^9, 
+   3.921619069396295*^9}, {3.9216192815348225`*^9, 3.921619283446108*^9}, {
+   3.921619659135629*^9, 3.921619660038196*^9}, {3.921619716639721*^9, 
+   3.921619717411894*^9}, {3.921630678284151*^9, 
+   3.921630678704376*^9}},ExpressionUUID->"e1e326a5-becb-8c47-bebb-\
+6360874e6fc2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"\[CapitalDelta]", ">", 
+         FractionBox[
+          SuperscriptBox["\[Tau]", "2"], "4"]}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\Delta>\\frac{\\tau^2}{4}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "29186942-11ad-c547-ad38-91bbbd477eb9"],
+ " Espiral estable"
+}], "Subsubsection",
+ CellChangeTimes->{{3.921619704076931*^9, 
+  3.9216197364391136`*^9}},ExpressionUUID->"6ae78750-13e1-c346-a56e-\
+24e938e688cb"],
+
+Cell[TextData[{
+ "Por un an\[AAcute]lisis totalmente an\[AAcute]logo:\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], "<", "2", 
+         SqrtBox[
+          RowBox[{
+            FractionBox[
+             RowBox[{"\[Beta]", 
+               StyleBox["K", "TI"]}], "\[Mu]"], "(", 
+            RowBox[{"1", "-", 
+              FractionBox["1", 
+               SubscriptBox[
+                StyleBox["R", "TI"], "0"]]}], ")"}]]}], TraditionalForm], 
+     "errors" -> {}, "input" -> 
+     "\\iff R_0<2\\sqrt{ \\frac{\\beta K}{\\mu} (1-\\frac{1}{R_0})}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "a132fdab-246d-c741-8d8f-bb9dcff8a7dc"]
+}], "Text",
+ CellChangeTimes->{{3.921619754994623*^9, 3.921619769901884*^9}, {
+   3.921620925712416*^9, 3.921620943028145*^9}, 
+   3.9216307573257523`*^9},ExpressionUUID->"a4102646-e691-1347-b819-\
+d01d34463721"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[<|"boxes" -> FormBox[
+      SqrtBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{"\[Beta]", 
+            StyleBox["K", "TI"]}], "\[Mu]"], "(", 
+         RowBox[{"1", "-", 
+           FractionBox["1", 
+            SubscriptBox[
+             StyleBox["R", "TI"], "0"]]}], ")"}]], TraditionalForm], 
+    "errors" -> {}, "input" -> 
+    "\\sqrt{ \\frac{\\beta K}{\\mu} (1-\\frac{1}{R_0})}", "state" -> "Boxes"|>,
+   "TeXAssistantTemplate"], 
+  TraditionalForm]],ExpressionUUID->"335ce378-a337-d44b-840d-730319b29c79"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.921620979044445*^9, 
+  3.921621013050646*^9}},ExpressionUUID->"7cf88a4b-785f-9741-a6c6-\
+13407a17de86"],
+
+Cell[TextData[{
+ "N\[OAcute]tese entonces que \[EAcute]stas soluciones existen si ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{"\[Beta]", 
+            StyleBox["K", "TI"]}], "\[Mu]"], 
+         RowBox[{"(", 
+           RowBox[{"1", "-", 
+             FractionBox["1", 
+              SubscriptBox[
+               StyleBox["R", "TI"], "0"]]}], ")"}], ">", "0"}], 
+       TraditionalForm], "errors" -> {}, "input" -> 
+     "\\frac{\\beta K}{\\mu} (1-\\frac{1}{R_0})>0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "35fbbf9a-d0e5-8441-ac3a-5a331f630833"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", "1", "-", 
+         FractionBox["1", 
+          SubscriptBox[
+           StyleBox["R", "TI"], "0"]], ">", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\iff  1-\\frac{1}{R_0}>0", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9029482e-6f27-ad45-b7df-9e2ce773ddfe"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", "1", ">", 
+         FractionBox["1", 
+          SubscriptBox[
+           StyleBox["R", "TI"], "0"]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\iff 1>\\frac{1}{R_0}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "081193dc-f915-cf4f-bce5-d095fe06d4c6"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{" ", "\[DoubleLongLeftRightArrow] ", 
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], ">", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\iff R_0>1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cb3ad9fa-efb5-6d49-8ea6-3d4c423663c9"],
+ "\n\nEs decir, esta soluci\[OAcute]n y sus estabilidades s\[OAcute]lo son \
+posibles si ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], ">", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "R_0>1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d37283d6-11a9-cf45-88ff-c47fa2a413c9"],
+ "; pues si ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], "\[LongEqual]", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "R_0=1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "1f9fbbce-19f5-7c46-8c0b-921fc9c914f8"],
+ ", la tasa de infecci\[OAcute]n es de uno a uno, entonces las poblaciones se \
+mantendr\[IAcute]an constantes; y si ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["R", "TI"], "0"], "<", "1"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "R_0<1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "75617d91-b4aa-3a49-ad5e-949cb43be495"],
+ " hay una deficiencia de infecci\[OAcute]n y no hay endemia."
+}], "Text",
+ CellChangeTimes->{{3.921621276892069*^9, 3.921621308249363*^9}, {
+  3.921621344786658*^9, 3.921621374142124*^9}, {3.9216215150566425`*^9, 
+  3.921621541247029*^9}, {3.921621694923477*^9, 3.921621727937964*^9}, {
+  3.92162175905209*^9, 3.921621809939764*^9}, {3.921621927933012*^9, 
+  3.92162193146311*^9}, {3.921630818586191*^9, 
+  3.9216308189516544`*^9}},ExpressionUUID->"04a5b71b-3209-8e47-a4d3-\
+446787ff866c"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+Magnification:>1. Inherited,
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a141edea-b151-f544-9ee1-a2d61b5c029b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 250, 4, 160, "Title",ExpressionUUID->"d9168103-2136-524b-8b3a-c5b52e1a1551"],
+Cell[833, 28, 164, 3, 53, "Subtitle",ExpressionUUID->"b4064d07-3a1c-5346-8664-570f40101b54"],
+Cell[CellGroupData[{
+Cell[1022, 35, 158, 3, 67, "Section",ExpressionUUID->"9e486d13-3361-e848-8f52-16370ee7d21f"],
+Cell[1183, 40, 4896, 121, 303, "Text",ExpressionUUID->"09297242-3688-4e4d-89fd-75adfe37300e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6116, 166, 228, 4, 67, "Section",ExpressionUUID->"db2f4c92-2c0a-1a4d-be2c-ccf5f416d487"],
+Cell[6347, 172, 5110, 119, 402, "Text",ExpressionUUID->"54081eb3-99fe-264c-bc6b-11f412457b39"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11494, 296, 165, 3, 67, "Section",ExpressionUUID->"4aa57b2a-0c19-554e-adc1-9299ed190231"],
+Cell[11662, 301, 1496, 38, 79, "Text",ExpressionUUID->"be33a50b-9265-a043-9e61-2e0ad54f9c7b"],
+Cell[CellGroupData[{
+Cell[13183, 343, 585, 14, 56, "Subsection",ExpressionUUID->"7a649dc4-4e32-2e4d-9b38-1d50eac4ad68"],
+Cell[13771, 359, 2146, 52, 152, "Text",ExpressionUUID->"c91e8431-4d46-d44e-923e-67a727e8cad2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15954, 416, 493, 13, 56, "Subsection",ExpressionUUID->"b69a4dc4-59d0-1e4e-89eb-18543b2401d0"],
+Cell[16450, 431, 8999, 218, 654, "Text",ExpressionUUID->"d2e660b0-e7bb-7a4b-91b0-0ab421390662"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25498, 655, 160, 3, 67, "Section",ExpressionUUID->"c053aa01-730c-f144-bbe0-23253394aef8"],
+Cell[25661, 660, 3703, 90, 120, "Text",ExpressionUUID->"d1157274-f7e2-e74a-a73e-73761184de9e"],
+Cell[CellGroupData[{
+Cell[29389, 754, 492, 13, 56, "Subsection",ExpressionUUID->"2b55cf6f-83c3-1249-ad43-1e7d7ce8c0e3"],
+Cell[29884, 769, 4037, 98, 181, "Text",ExpressionUUID->"36f8d156-0631-cd48-aef1-312a06daf6ea"],
+Cell[CellGroupData[{
+Cell[33946, 871, 543, 14, 47, "Subsubsection",ExpressionUUID->"29e7d04a-fd94-0f45-a4b5-de85752d906a"],
+Cell[34492, 887, 1994, 49, 121, "Text",ExpressionUUID->"a87843ec-b643-9945-9272-4ed1111f8716"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36523, 941, 506, 13, 47, "Subsubsection",ExpressionUUID->"e7dcfc66-9669-9347-bb17-1115a04e2b79"],
+Cell[37032, 956, 1873, 48, 121, "Text",ExpressionUUID->"ee8162a1-ae79-1f40-b7f3-701dd71bd780"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38954, 1010, 496, 13, 56, "Subsection",ExpressionUUID->"2c81e773-458f-644d-8ba4-136494fb5597"],
+Cell[39453, 1025, 5075, 121, 198, "Text",ExpressionUUID->"f32943a6-71ed-4a49-8b65-21439f1e9860"],
+Cell[CellGroupData[{
+Cell[44553, 1150, 621, 16, 68, "Subsubsection",ExpressionUUID->"27068893-df91-2049-b1a5-a482a1896e8a"],
+Cell[45177, 1168, 6954, 175, 244, "Text",ExpressionUUID->"e1e326a5-becb-8c47-bebb-6360874e6fc2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52168, 1348, 574, 15, 68, "Subsubsection",ExpressionUUID->"6ae78750-13e1-c346-a56e-24e938e688cb"],
+Cell[52745, 1365, 1026, 26, 82, "Text",ExpressionUUID->"a4102646-e691-1347-b819-d01d34463721"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53808, 1396, 724, 19, 78, "Subsubsection",ExpressionUUID->"7cf88a4b-785f-9741-a6c6-13407a17de86"],
+Cell[54535, 1417, 3692, 91, 223, "Text",ExpressionUUID->"04a5b71b-3209-8e47-a4d3-446787ff866c"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
